@@ -4,16 +4,16 @@
 #include "file/linux_file.hpp"
 #include "file/windows_file.hpp"
 #include "configuration/configuration.hpp"
+#include <fim_task_manager.hpp>
+#include <thread_pool.hpp>
 
 class FIM_engine {
 private:
-    Configuration configuration;
-    int threads;
-
-    void init_threads_pool();
-    void init_queues();
+    // Configuration configuration;
+    Thread_pool *thread_pool;
+    FIM_task_manager *task_manager;
 public:
-    void init_engine();
+    FIM_engine();
 };
 
 #endif

@@ -3,7 +3,7 @@
 
 #include "monitoring.hpp"
 
-class Registry: private Monitoring {
+class Registry: public Monitoring {
 private:
 
 };

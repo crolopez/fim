@@ -3,7 +3,7 @@
 
 #include "file.hpp"
 
-class Linux_file: private File {
+class Linux_file: public File {
 private:
     unsigned int inode;
     unsigned int device;

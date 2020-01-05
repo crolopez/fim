@@ -3,7 +3,7 @@
 
 #include "monitoring.hpp"
 
-class File_content: private Monitoring {
+class File_content: public Monitoring {
 private:
 
 };

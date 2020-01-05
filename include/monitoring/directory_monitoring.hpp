@@ -3,7 +3,7 @@
 
 #include "monitoring.hpp"
 
-class Directory: private Monitoring {
+class Directory: public Monitoring {
 private:
 
 };

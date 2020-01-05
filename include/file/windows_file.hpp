@@ -3,7 +3,7 @@
 
 #include "file.hpp"
 
-class Windows_file: private File {
+class Windows_file: public File {
 private:
     unsigned int attrs;
 };
