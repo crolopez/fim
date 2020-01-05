@@ -35,7 +35,7 @@ add_custom_command(OUTPUT ${CREATE_F}
     COMMENT "Creating folders"
     VERBATIM
 )
-add_custom_target(CREATE_FOLDERS DEPENDS ${FOLDERS})
+add_custom_target(create_folders DEPENDS ${CREATE_F})
 
 
 # Create FIM library
@@ -44,15 +44,11 @@ file(GLOB LIBRARY_SRC "${SRC_F}/*.cpp")
 add_library(${FIM_LIB} STATIC ${LIBRARY_SRC})
 
 
+# External deps
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+find_package(Deps REQUIRED)
+
+
 # Create test binary
 add_executable(${TEST_BIN} ${TEST_SRC})
 TARGET_LINK_LIBRARIES(${TEST_BIN} ${FIM_LIB})
-
-
-
-
-#add_custom_target(TEST_BIN DEPENDS ${FOLDERS})
-
-
-
-
