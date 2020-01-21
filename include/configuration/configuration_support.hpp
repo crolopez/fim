@@ -2,18 +2,22 @@
 #define __CONFIGURATION_SUPPORT_H__
 
 #include <string>
+#include "../monitoring/directory_monitoring.hpp"
+#include "../monitoring/registry_monitoring.hpp"
+#include "../monitoring/file_content_monitoring.hpp"
 
-struct file_timestamps {
-    std::string creation_date;
-    std::string modification_date;
-    std::string last_access;
+struct reporting_data {
+    std::string address;
+    char protocol;
+    int port;
+    int max_eps;
 };
 
-struct file_hashes {
-    std::string md5;
-    std::string sha1;
-    std::string sha256;
-    std::string sha512;
+struct configuration_node {
+    Directory directory;
+    Registry registry;
+    File_content file_content;
+    reporting_data reporting;
 };
 
 #endif

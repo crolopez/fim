@@ -1,0 +1,33 @@
+{
+    "reporting": {
+        "address": "1.1.1.1",
+        "protocol": "tcp",
+        "port": 1616,
+        "max_eps": 500
+    },
+    "monitoring": {
+        "scan_frequency": "30s",
+        "directories": {
+            "/tmp/test1": "default",
+            "/tmp/test2": "default2"
+        },
+        "configurations": {
+            "default": [
+                "SHA256",
+                "SIZE",
+                "MODIFICATION_TIME"
+            ],
+            "default2": [
+                "$default",
+                "CREATION_TIME"
+            ]
+        }
+    },
+    "advanced": {
+        "queue": {
+            "directory": 500,
+            "file": 500
+        },
+        "threads": 0
+    }
+}

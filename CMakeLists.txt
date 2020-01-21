@@ -40,7 +40,7 @@ add_custom_target(create_folders DEPENDS ${CREATE_F})
 
 # Create FIM library
 SET(FIM_LIB "fim")
-file(GLOB LIBRARY_SRC "${SRC_F}/*.cpp")
+file(GLOB_RECURSE LIBRARY_SRC "${SRC_F}/*.cpp")
 add_library(${FIM_LIB} STATIC ${LIBRARY_SRC})
 
 

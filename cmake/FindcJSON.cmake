@@ -21,7 +21,6 @@ add_dependencies(_${LIB_CJSON} UNCOMPRESSED_CJSON)
 
 # Move cJSON library to its final path
 add_custom_command(OUTPUT ${LIB_CJSON_PATH}
-    COMMENT "Creating ${LIB_CJSON} library."
     COMMAND pwd && mv lib_${LIB_CJSON}.a ${LIB_CJSON_PATH}
     DEPENDS _${LIB_CJSON}
     VERBATIM

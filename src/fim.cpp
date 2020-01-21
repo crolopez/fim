@@ -3,6 +3,7 @@
 
 FIM_engine::FIM_engine() {
     // Load config
+    config = new Configuration;
 
     // Create a task manager instance
     // task_manager = new FIM_task_manager(10, 10, false); // <~~~~~~~~~~~~~~ COMPILATION ERROR
