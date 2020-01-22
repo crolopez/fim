@@ -4,9 +4,6 @@
 #include "configuration_support.hpp"
 #include "../external/cjson/cJSON.h"
 
-// The local configuration cannot be chosen at the moment
-#define LOCAL_CONFIGURATION_PATH "config.json"
-
 class Configuration {
 private:
     configuration_node current_config;
@@ -14,11 +11,12 @@ private:
     std::string local_path;
     void apply_loaded_configuration();
     void load_reporting(cJSON *json_cfg);
+    void load_advanced(cJSON *json_cfg);
     void load_directory(cJSON *json_cfg);
     void load_registry(cJSON *json_cfg);
     void load_file_content(cJSON *json_cfg);
 public:
-    Configuration();
+    Configuration(std::string config_path);
     void load_local_configuration();
     void load_remote_configuration(); // ~~~~~~~~~~~~~~~ TODO
 };

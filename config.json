@@ -26,8 +26,8 @@
     "advanced": {
         "queue": {
             "directory": 500,
-            "file": 500
+            "file": 501
         },
-        "threads": 0
+        "threads": 7
     }
 }

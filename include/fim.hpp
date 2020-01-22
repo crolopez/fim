@@ -12,7 +12,8 @@ private:
     FIM_task_manager *task_manager;
     Configuration *config;
 public:
-    FIM_engine();
+    FIM_engine(std::string config_path);
+    FIM_engine(char *config_path);
 };
 
 #endif
